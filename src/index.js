@@ -1,4 +1,4 @@
-let pups, pupBar, s, c, renderBar, puppers, pupShow, showImage, pupSpan, goodPups = []
+let pups, pupBar, s, c, renderBar, puppers, pupShow, showImage, pupSpan, goodPups = [], selectedPup
 document.addEventListener("DOMContentLoaded", function render(){
 
  s = function(select){return document.querySelector(select)}
@@ -26,14 +26,15 @@ document.addEventListener("DOMContentLoaded", function render(){
      pupSpan.addEventListener('click', function(){
         showName.innerText = pup.name
         pupShow.append(showName)
-
+    
         showImage.src = pup.image
         pupShow.append(showImage)
 
-
+        pup = selectedPup
         if(pup.isGoodDog == true){
           showStatus.innerText = "What a Good Boy!"
           showButton.innerText = "Report as Bad"
+
           pupShow.append(showStatus, showButton)}
         else{
           showStatus.innerText = "Bad Pup!"
@@ -64,9 +65,5 @@ document.addEventListener("DOMContentLoaded", function render(){
     .then(renderBar)
 
 })
-
-
-
-
 
 
